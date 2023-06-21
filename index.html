@@ -172,10 +172,11 @@
 
         if(password == confirmPassword)
         {
-          axios.post("https://affiliate-api-wp31.onrender.com/user/create/"+referral, {
+          axios.post("https://affiliate-api-wp31.onrender.com/user/create/", {
             email: email,
             username: username,
-            password: password
+            password: password,
+            referral: referral
         },
         {
           headers: {
