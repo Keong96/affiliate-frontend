@@ -66,7 +66,7 @@
     let params = new URLSearchParams(window.location.search)
     var referral = params.get('referral');
     CheckReferral();
-    
+
     function CheckReferral()
     {
       if(referral)
@@ -79,8 +79,11 @@
           }}
         )
         .then(response => {
-            document.getElementById("referral").style.display = "block";
-            document.getElementById("referral").value = response.data.username;
+            if(response.data.username)
+            {
+              document.getElementById("referral").style.display = "block";
+              document.getElementById("referral").value = response.data.username;
+            }
         })
         .catch(error => {
             console.log(error.response.data);
