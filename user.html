@@ -31,7 +31,7 @@
             content += '<tr><td>New Password : </td><td><input id="newPassword" required class="form-control" type="password"/><button id="ChangePasswordButton" onclick="ChangePassword()">Change</button></td></tr>';
             content += '</table>';
 
-            axios.get("https://weddingappapi.onrender.com/user/referral", {}, {
+            axios.get("https://weddingappapi.onrender.com/user/referral/"+decoded_token.userId, {}, {
                     headers: { Authorization: `Bearer ${token}` }
                     })
                 .then(response => {
