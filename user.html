@@ -26,6 +26,9 @@
                     <span id="welcome_message"></span>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="GetReferralLink()">Get My Referral Link</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="#" onclick="Logout()">Logout</a>
                   </li>
                 </ul>
@@ -98,6 +101,13 @@
     {
         localStorage.removeItem('token');
         window.location.href = 'index.html';
+    }
+
+    function GetReferralLink()
+    {
+        var link = "https://affiliate-frontend.onrender.com/?referral="+decoded_token.userId;
+        navigator.clipboard.writeText(link);
+        alert("Your Refferal Link : " + link);
     }
     </script>
 </body>
