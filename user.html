@@ -47,7 +47,7 @@
     axios.get("https://affiliate-api-wp31.onrender.com/user/get/"+decoded_token.userId,
     {headers: { Authorization: `Bearer ${token}` }})
           .then(response => {
-            var content = '<table class="table table-responsive-sm table-borderless">';
+            var content = '<table class="table table-sm table-borderless">';
             content += '<tr><td>Username : </td><td><input id="username" required class="form-control" type="text" value="'+response.data.username+'"/></td></tr>';
             content += '<tr><td>Email : </td><td><input id="email" disabled class="form-control" type="text" value="'+response.data.email+'"/></td></tr>';
             content += '<tr><td>Password : </td><td><input id="password" required class="form-control" type="password"/></td></tr>';
@@ -59,7 +59,7 @@
                     })
                 .then(response2 => {
                     content += '<br><h3>Referral List</h3><br>'
-                    content += '<table class="table table-striped">';
+                    content += '<table class="table table-sm table-striped">';
                     content += '<thead><tr><th scope="col">#</th><th scope="col">Username</th><th scope="col">Joined Date</th><th scope="col">Rate (%) </th><th style="text-align:center">Action</th></tr></thead>';
                     for(i = 0; i < response.data.length; i++)
                     {
@@ -107,7 +107,7 @@
     {
         var link = "https://affiliate-frontend.onrender.com/?referral="+decoded_token.userId;
         navigator.clipboard.writeText(link);
-        alert("Your Refferal Link : " + link);
+        alert("Your Refferal Link is Copied! \n" + link);
     }
     </script>
 </body>
