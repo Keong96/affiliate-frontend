@@ -82,7 +82,7 @@
             if(response.data.username)
             {
               document.getElementById("referral").style.display = "block";
-              document.getElementById("referral").value = response.data.username;
+              document.getElementById("referral").value = "Referral : "+response.data.username;
             }
         })
         .catch(error => {
