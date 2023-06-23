@@ -51,7 +51,7 @@
             content += '<tr><td>Username : </td><td><input id="username" required class="form-control" type="text" value="'+response.data.username+'"/></td></tr>';
             content += '<tr><td>Email : </td><td><input id="email" disabled class="form-control" type="text" value="'+response.data.email+'"/></td></tr>';
             content += '<tr><td>Password : </td><td><input id="password" required class="form-control" type="password"/></td></tr>';
-            content += '<tr><td>New Password : </td><td><input id="newPassword" required class="form-control" type="password"/><button id="ChangePasswordButton" onclick="ChangePassword()">Change</button></td></tr>';
+            content += '<tr><td>New Password : </td><td><input id="newPassword" required class="form-control" type="password"/></td> <td><button id="ChangePasswordButton" onclick="ChangePassword()">Change</button></td></tr>';
             content += '</table>';
 
             axios.get("https://affiliate-api-wp31.onrender.com/user/referral/"+decoded_token.userId, {
