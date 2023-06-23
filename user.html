@@ -34,17 +34,18 @@
             axios.get("https://affiliate-api-wp31.onrender.com/user/referral/"+decoded_token.userId, {
                     headers: { Authorization: `Bearer ${token}` }
                     })
-                .then(response => {
-                    var content = '<h3>Referral List</h3>'
+                .then(response2 => {
+                    content += '<br><h3>Referral List</h3><br>'
                     content += '<table class="table table-striped">';
                     content += '<thead><tr><th scope="col">#</th><th scope="col">Username</th><th scope="col">Joined Date</th><th scope="col">Rate (%) </th><th style="text-align:center">Action</th></tr></thead>';
                     for(i = 0; i < response.data.length; i++)
                     {
                         content += "<tr>";
                         content += "<td>"+(i+1)+"</td>";
-                        content += "<td>"+response.data[i]['username']+"</td>";
-                        content += "<td>"+response.data[i]['created_at']+"</td>";
-                        content +='<button class="btn btn-outline-secondary"><i class="fa fa-gear"></i></button>';
+                        content += "<td>"+response2.data[i]['username']+"</td>";
+                        content += "<td>"+response2.data[i]['created_at']+"</td>";
+                        content += "<td>"+response2.data[i]['rate']+"</td>";
+                        content +='<td><button class="btn btn-outline-secondary"><i class="fa fa-gear"></i></button></td>';
                     }
 
                     document.getElementById("content").innerHTML += content;
